@@ -1,4 +1,4 @@
-# Vue-koa-wechatbot
+# Vue-koa
 
 > A koa + Vue.js + webpack project
 
