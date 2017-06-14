@@ -1,0 +1,193 @@
+@import 'value/length'
+@import 'value/blur'
+@import 'rely/trigonometry'
+
+shadow(deg, r, blr, clr)
+	$x = sin(deg) * r
+	$y = cos(deg) * r
+	filter drop-shadow($x $y blr clr)
+
+shadow-xy(x, y, b, c)
+	filter drop-shadow(x y b c)
+
+//center
+$shadow-s
+	shadow(0, 0, $blur_s, $black_disable)
+$shadow-m
+	shadow(0, 0, $blur_m, $black_disable)
+$shadow-l
+	shadow(0, 0, $blur_l, $black_disable)
+
+$shadow-green-s
+	shadow(0, 0, $blur_s, $green_light)
+$shadow-green-m
+	shadow(0, 0, $blur_m, $green_light)
+$shadow-green-l
+	shadow(0, 0, $blur_l, $green_light)
+
+$shadow-red-s
+	shadow(0, 0, $blur_s, $red_light)
+$shadow-red-m
+	shadow(0, 0, $blur_m, $red_light)
+$shadow-red-l
+	shadow(0, 0, $blur_l, $red_light)
+
+$shadow-yellow-s
+	shadow(0, 0, $blur_s, $yellow_light)
+$shadow-yellow-m
+	shadow(0, 0, $blur_m, $yellow_light)
+$shadow-yellow-l
+	shadow(0, 0, $blur_l, $yellow_light)
+
+$shadow-blue-s
+	shadow(0, 0, $blur_s, $blue_light)
+$shadow-blue-m
+	shadow(0, 0, $blur_m, $blue_light)
+$shadow-blue-l
+	shadow(0, 0, $blur_l, $blue_light)
+
+//bottom
+$shadow-b-s
+	shadow(180, $blur_s/2, $blur_s, $black_disable)
+$shadow-b-m
+	shadow(180, $blur_m/2, $blur_m, $black_disable)
+$shadow-b-l
+	shadow(180, $blur_l/2, $blur_l, $black_disable)
+
+$shadow-b-green-s
+	shadow(180, $blur_s/2, $blur_s,  $green_light)
+$shadow-b-green-m
+	shadow(180, $blur_m/2, $blur_m, $green_light)
+$shadow-b-green-l
+	shadow(180, $blur_l/2, $blur_l, $green_light)
+
+$shadow-b-red-s
+	shadow(180, $blur_s/2, $blur_s, $red_light)
+$shadow-b-red-m
+	shadow(180, $blur_m/2, $blur_m, $red_light)
+$shadow-b-red-l
+	shadow(180, $blur_l/2, $blur_l, $red_light)
+
+$shadow-b-yellow-s
+	shadow(180, $blur_s/2, $blur_s, $yellow_light)
+$shadow-b-yellow-m
+	shadow(180, $blur_m/2, $blur_m, $yellow_light)
+$shadow-b-yellow-l
+	shadow(180, $blur_l/2, $blur_l, $yellow_light)
+
+$shadow-b-blue-s
+	shadow(180, $blur_s/2, $blur_s, $blue_light)
+$shadow-b-blue-m
+	shadow(180, $blur_m/2, $blur_m, $blue_light)
+$shadow-b-blue-l
+	shadow(180, $blur_l/2, $blur_l, $blue_light)
+
+
+//top
+$shadow-t-s
+	shadow(0, $blur_s/2, $blur_s, $black_disable)
+$shadow-t-m
+	shadow(0, $blur_m/2, $blur_m, $black_disable)
+$shadow-t-l
+	shadow(0, $blur_l/2, $blur_l, $black_disable)
+
+$shadow-t-green-s
+	shadow(0, $blur_s/2, $blur_s, $green_light)
+$shadow-t-green-m
+	shadow(0, $blur_m/2, $blur_m, $green_light)
+$shadow-t-green-l
+	shadow(0, $blur_l/2, $blur_l, $green_light)
+
+$shadow-t-red-s
+	shadow(0, $blur_s/2, $blur_s, $red_light)
+$shadow-t-red-m
+	shadow(0, $blur_m/2, $blur_m, $red_light)
+$shadow-t-red-l
+	shadow(0, $blur_l/2, $blur_l, $red_light)
+
+$shadow-t-yellow-s
+	shadow(0, $blur_s/2, $blur_s, $yellow_light)
+$shadow-t-yellow-m
+	shadow(0, $blur_m/2, $blur_m, $yellow_light)
+$shadow-t-yellow-l
+	shadow(0, $blur_l/2, $blur_l, $yellow_light)
+
+$shadow-t-blue-s
+	shadow(0, $blur_s/2, $blur_s, $blue_light)
+$shadow-t-blue-m
+	shadow(0, $blur_m/2, $blur_m, $blue_light)
+$shadow-t-blue-l
+	shadow(0, $blur_l/2, $blur_l, $blue_light)
+
+//left
+$shadow-l-s
+	shadow(270, $blur_s/2, $blur_s, $black_disable)
+$shadow-l-m
+	shadow(270, $blur_m/2, $blur_m, $black_disable)
+$shadow-l-l
+	shadow(270, $blur_l/2, $blur_l, $black_disable)
+
+$shadow-l-green-s
+	shadow(270, $blur_s/2, $blur_s, $green_light)
+$shadow-l-green-m
+	shadow(270, $blur_m/2, $blur_m, $green_light)
+$shadow-l-green-l
+	shadow(270, $blur_l/2, $blur_l, $green_light)
+
+$shadow-l-red-s
+	shadow(270, $blur_s/2, $blur_s, $red_light)
+$shadow-l-red-m
+	shadow(270, $blur_m/2, $blur_m, $red_light)
+$shadow-l-red-l
+	shadow(270, $blur_l/2, $blur_l, $red_light)
+
+$shadow-l-yellow-s
+	shadow(270, $blur_s/2, $blur_s, $yellow_light)
+$shadow-l-yellow-m
+	shadow(270, $blur_m/2, $blur_m, $yellow_light)
+$shadow-l-yellow-l
+	shadow(270, $blur_l/2, $blur_l, $yellow_light)
+
+$shadow-l-blue-s
+	shadow(270, $blur_s/2, $blur_s, $blue_light)
+$shadow-l-blue-m
+	shadow(270, $blur_m/2, $blur_m, $blue_light)
+$shadow-l-blue-l
+	shadow(270, $blur_l/2, $blur_l, $blue_light)
+
+//right
+$shadow-r-s
+	shadow(90, $blur_s/2, $blur_s, $black_disable)
+$shadow-r-m
+	shadow(90, $blur_m/2, $blur_m, $black_disable)
+$shadow-r-l
+	shadow(90, $blur_l/2, $blur_l, $black_disable)
+
+$shadow-r-green-s
+	shadow(90, $blur_s/2, $blur_s, $green_light)
+$shadow-r-green-m
+	shadow(90, $blur_m/2, $blur_m, $green_light)
+$shadow-r-green-l
+	shadow(90, $blur_l/2, $blur_l, $green_light)
+
+$shadow-r-red-s
+	shadow(90, $blur_s/2, $blur_s, $red_light)
+$shadow-r-red-m
+	shadow(90, $blur_m/2, $blur_m, $red_light)
+$shadow-r-red-l
+	shadow(90, $blur_l/2, $blur_l, $red_light)
+
+$shadow-r-yellow-s
+	shadow(90, $blur_s/2, $blur_s, $yellow_light)
+$shadow-r-yellow-m
+	shadow(90, $blur_m/2, $blur_m, $yellow_light)
+$shadow-r-yellow-l
+	shadow(90, $blur_l/2, $blur_l, $yellow_light)
+
+$shadow-r-blue-s
+	shadow(90, $blur_s/2, $blur_s, $blue_light)
+$shadow-r-blue-m
+	shadow(90, $blur_m/2, $blur_m, $blue_light)
+$shadow-r-blue-l
+	shadow(90, $blur_l/2, $blur_l, $blue_light)
+

@@ -1,0 +1,217 @@
+@import 'value/length'
+@import 'rely/wysiwyg'
+
+//stack
+stack-x(gap = 0)
+	main-direction x
+	& > *
+		flex-shrink: 0
+	& > *:not(:first-child)
+		margin-left gap
+stack-y(gap = 0)
+	main-direction y
+	& > *
+		flex-shrink: 0
+	& > *:not(:first-child)
+		margin-top gap
+stack-xr(gap = 0)
+	main-direction xr
+	& > *
+		flex-shrink: 0
+	& > *:not(:first-child)
+		margin-right gap
+stack-yr(gap = 0)
+	main-direction yr
+	& > *
+		flex-shrink: 0
+	& > *:not(:first-child)
+		margin-bottom gap
+
+$stack-x
+	stack-x()
+$stack-y
+	stack-y()
+$stack-xr
+	stack-xr()
+$stack-yr
+	stack-yr()
+$stack-x-s
+	stack-x($length_s)
+$stack-x-m
+	stack-x($length_m)
+$stack-x-l
+	stack-x($length_l)
+$stack-x-xs
+	stack-x($length_xs)
+$stack-x-xl
+	stack-x($length_xl)
+$stack-y-s
+	stack-y($length_s)
+$stack-y-m
+	stack-y($length_m)
+$stack-y-l
+	stack-y($length_l)
+$stack-y-xs
+	stack-y($length_xs)
+$stack-y-xl
+	stack-y($length_xl)
+$stack-xr-s
+	stack-xr($length_s)
+$stack-xr-m
+	stack-xr($length_m)
+$stack-xr-l
+	stack-xr($length_l)
+$stack-xr-xs
+	stack-xr($length_xs)
+$stack-xr-xl
+	stack-xr($length_xl)
+$stack-yr-s
+	stack-yr($length_s)
+$stack-yr-m
+	stack-yr($length_m)
+$stack-yr-l
+	stack-yr($length_l)
+$stack-yr-xs
+	stack-yr($length_xs)
+$stack-yr-xl
+	stack-yr($length_xl)
+
+// grid
+grid(cols, gapx = 0, gapy = gapx)
+	main-direction x
+	flex-wrap wrap
+	width 100%
+	& > *
+		gaps = (cols - 1)
+		gaptotal = gaps * gapx
+		if gapx == 0
+			width: "calc((100%) / %s)" % cols
+		else
+			width: "calc((100% - %s) / %s)" % (gaptotal cols)
+			margin-left gapx
+		if gapy != 0
+			margin-bottom gapy
+	& > *:nth-child({cols}n+1)
+		margin-left 0
+	& > *:nth-child({cols}n+1):nth-last-child(-n+{cols})
+		margin-bottom 0
+	& > *:nth-child({cols}n+1):nth-last-child(-n+{cols}) ~ *
+		margin-bottom 0
+
+
+$grid-1
+	grid(1)
+$grid-1-xs
+	grid(1, $length_xs)
+$grid-1-s
+	grid(1, $length_s)
+$grid-1-m
+	grid(1, $length_m)
+$grid-1-l
+	grid(1, $length_l)
+$grid-1-xl
+	grid(1, $length_xl)
+$grid-2
+	grid(2)
+$grid-2-xs
+	grid(2, $length_xs)
+$grid-2-s
+	grid(2, $length_s)
+$grid-2-m
+	grid(2, $length_m)
+$grid-2-l
+	grid(2, $length_l)
+$grid-2-xl
+	grid(2, $length_xl)
+$grid-3
+	grid(3)
+$grid-3-xs
+	grid(3, $length_xs)
+$grid-3-s
+	grid(3, $length_s)
+$grid-3-m
+	grid(3, $length_m)
+$grid-3-l
+	grid(3, $length_l)
+$grid-3-xl
+	grid(3, $length_xl)
+$grid-4
+	grid(4)
+$grid-4-xs
+	grid(4, $length_xs)
+$grid-4-s
+	grid(4, $length_s)
+$grid-4-m
+	grid(4, $length_m)
+$grid-4-l
+	grid(4, $length_l)
+$grid-4-xl
+	grid(4, $length_xl)
+
+// flow
+flow(gapx = 0, gapy = gapx)
+	main-direction x
+	flex-wrap wrap
+	& > *
+		flex-shrink: 0
+	if gapx != 0
+		margin-right (gapx * -1)
+		& > *
+			margin-right gapx
+	if gapy != 0
+		margin-bottom (gapy * -1)
+		& > *
+			margin-bottom gapy
+
+$flow
+	flow()
+$flow-xs
+	flow($length_xs)
+$flow-s
+	flow($length_s)
+$flow-m
+	flow($length_m)
+$flow-l
+	flow($length_l)
+$flow-xl
+	flow($length_xl)
+
+// div
+div-x(gap = 0)
+	& > *
+		cross-align(stretch)
+		// height 100%
+	& > *:not(:first-child)
+		margin-left gap
+div-y(gap = 0)
+	main-direction y
+	& > *
+		cross-align(stretch)
+		// width 100%
+	& > *:not(:first-child)
+		margin-top gap
+
+$div-x
+	div-x()
+$div-x-xs
+	div-x($length_xs)
+$div-x-s
+	div-x($length_s)
+$div-x-m
+	div-x($length_m)
+$div-x-l
+	div-x($length_l)
+$div-x-xl
+	div-x($length_xl)
+$div-y
+	div-y(1)
+$div-y-xs
+	div-y($length_xs)
+$div-y-s
+	div-y($length_s)
+$div-y-m
+	div-y($length_m)
+$div-y-l
+	div-y($length_l)
+$div-y-xl
+	div-y($length_xl)

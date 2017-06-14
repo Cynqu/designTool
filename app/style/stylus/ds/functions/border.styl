@@ -1,0 +1,46 @@
+box-border(color, thickness = 1px, align = inside)
+	border none // ? need?
+	if align == center
+		box-shadow 0 0 0 (thickness/2) color, inset 0 0 0 (thickness/2) color
+	else if align == outside
+		box-shadow 0 0 0 thickness color
+	else if align == inside
+		box-shadow inset 0 0 0 thickness color
+	else if align == block
+		border thickness solid color
+box-border-left(color, thickness = 1px, align = inside)
+	if align == center
+		box-shadow (thickness/-2) 0 0 0 color, inset (thickness/2) 0 0  color
+	else if align == outside
+		box-shadow (thickness*-1) 0 0 0 color
+	else if align == inside
+		box-shadow inset thickness 0 0 color
+	else if align == block
+		border-left thickness solid color
+box-border-right(color, thickness = 1px, align = inside)
+	if align == center
+		box-shadow (thickness/2) 0 0 0 color, inset (thickness/-2) 0 0 0 color
+	else if align == outside
+		box-shadow thickness 0 0 0 color
+	else if align == inside
+		box-shadow inset (thickness*-1) 0 0 color
+	else if align == block
+		border-right thickness solid color
+box-border-bottom(color, thickness = 1px, align = inside)
+	if align == center
+		box-shadow 0 (thickness/2) 0 0 color, inset 0 (thickness/-2) 0 0  color
+	else if align == outside
+		box-shadow 0 thickness 0 0 color
+	else if align == inside
+		box-shadow inset 0 (thickness*-1) 0 0 color
+	else if align == block
+		border-bottom thickness solid color
+box-border-top(color, thickness = 1px, align = inside)
+	if align == center
+		box-shadow 0 (thickness/-2) 0 0 color, inset 0 (thickness/2) 0 0  color
+	else if align == outside
+		box-shadow 0 (thickness*-1) 0 0 color
+	else if align == inside
+		box-shadow inset 0 thickness 0 0 color
+	else if align == block
+		border-top thickness solid color

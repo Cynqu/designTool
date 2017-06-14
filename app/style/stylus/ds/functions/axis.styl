@@ -1,0 +1,105 @@
+main-direction(dir)
+	if dir == 'x'
+		flex-direction row
+	else if dir == 'y'
+		flex-direction column
+	else if dir == 'xr'
+		flex-direction row-reverse
+	else if dir == 'yr'
+		flex-direction column-reverse
+
+$main-x
+	main-direction(x)
+$main-y
+	main-direction(y)
+$main-xr
+	main-direction(xr)
+$main-yr
+	main-direction(yr)
+
+main-overflow(m)
+	// - show
+	// - hide
+	// - wrap-show
+	// - wrap-hide
+	// - wrap-r-show
+	// - wrap-r-hide
+	if m == 'show'
+		flex-wrap nowrap
+		overflow visible
+	else if m == 'hide'
+		flex-wrap nowrap
+		overflow hidden
+	else if m == 'wrap-show'
+		flex-wrap wrap
+		overflow visible
+	else if m == 'wrap-hide'
+		flex-wrap wrap
+		overflow hidden
+	else if m == 'wrap-r-show'
+		flex-wrap wrap-reverse
+		overflow visible
+	else if m == 'wrap-r-hide'
+		flex-wrap wrap-reverse
+		overflow hidden
+
+
+axis(main-dir = 'x', main-overflow, cross-reverse = false, cross-overflow)
+	main-direction(main-dir)
+	if main-overflow == 'show'
+		flex-wrap nowrap
+		overflow visible
+	else if main-overflow == 'hide'
+		flex-wrap nowrap
+		overflow hidden
+	else if main-overflow == 'wrap'
+		if cross-reverse
+			flex-wrap wrap-reverse
+		else
+			flex-wrap wrap
+		if cross-overflow == 'show'
+			overflow visible
+		else if cross-overflow == 'hide'
+			overflow hidden
+
+axis-main-align(m)
+	if m == 'start'
+		justify-content flex-start
+	else if m == 'center'
+		justify-content center
+	else if m == 'end'
+		justify-content flex-end
+	else if m == 'between'
+		justify-content space-between
+
+$main-start
+	axis-main-align(start)
+$main-end
+	axis-main-align(end)
+$main-center
+	axis-main-align(center)
+$main-between
+	axis-main-align(between)
+
+axis-cross-align(m)
+	if m == 'start'
+		align-items flex-start
+	else if m == 'center'
+		align-items center
+	else if m == 'end'
+		align-items flex-end
+	else if m == 'baseline'
+		align-items baseline
+	else if m == 'stretch'
+		align-items stretch
+
+$cross-start
+	axis-cross-align(start)
+$cross-center
+	axis-cross-align(center)
+$cross-end
+	axis-cross-align(end)
+$cross-baseline
+	axis-cross-align(baseline)
+$cross-stretch
+	axis-cross-align(stretch)

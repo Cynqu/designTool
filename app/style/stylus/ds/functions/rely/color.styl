@@ -1,0 +1,11 @@
+@import 'hsv'
+
+// color-shift(color, amount = 0)
+// 	hsv(hsvhue(color), hsvsaturation(color) - 5% * amount, hsvvalue(color) + 5% * amount)
+
+color-lighter(color, amount = 1)
+	light = lightness(color) + 5% * amount
+	return lightness(color, light)
+
+color-shift(color, amount = 0)
+	return hsl(hue(color), saturation(color) + 5% * amount, lightness(color) + 5% * amount)

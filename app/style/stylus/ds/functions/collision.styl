@@ -1,0 +1,54 @@
+//collision
+collision(m = bento)
+	if m == 'bento'
+		display inline-flex
+		position relative
+	if m == 'layer'
+		display inline-flex
+		position absolute
+
+$bento
+	collision(bento)
+$layer
+	collision(layer)
+
+
+// bento
+bento-align(m)
+	if m == 'start'
+		align-self flex-start
+	else if m == 'center'
+		align-self center
+	else if m == 'end'
+		align-self flex-end
+	else if m == 'baseline'
+		align-self baseline
+	else if m == 'stretch'
+		align-self stretch
+
+$bento-start
+	bento-align(start)
+$bento-center
+	bento-align(center)
+$bento-end
+	bento-align(end)
+$bento-baseline
+	bento-align(baseline)
+$bento-stretch
+	bento-align(stretch)
+
+// layer
+layer-align-x(dir, offset = 0)
+	if dir == 'start'
+		left offset
+	else if dir == 'center'
+		margin-x auto
+	else if dir == 'end'
+		right offset
+layer-align-y(dir, offset = 0)
+	if dir == 'start'
+		top offset
+	else if dir == 'center'
+		margin-y auto
+	else if dir == 'end'
+		bottom offset

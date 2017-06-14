@@ -1,0 +1,56 @@
+.content {
+  color: #8C9091;
+}
+.content2 {
+  color: #535859;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.m-left-1{
+  margin-left: 8px;
+}
+.m-top-1 {
+  margin-top: 8px;
+}
+.m-top-2 {
+  margin-top: 16px;
+}
+.m-left-2{
+  margin-left: 16px;
+}
+.p-right-1 {
+  padding-right: 8px;
+}
+.col-25 {
+  width: 25%;
+  float: left;
+}
+.col-33 {
+  width: 33.33%;
+  float: left;
+}
+.col-50 {
+  width: 50%;
+  float: left;
+}
+.no-border {
+  border: none!important;
+}
+.clearfloat {
+  &:after,
+  &:before {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}

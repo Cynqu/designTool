@@ -1,0 +1,113 @@
+$pi = 3.14159265359
+
+pow($number, $exp)
+	$value = 1
+	if $exp > 0
+		for $i in (1)..($exp)
+			$value = $value * $number
+	else if $exp < 0
+		for $i in (1)..(-$exp)
+			$value = $value / $number
+	return $value
+
+fact($number)
+	$value = 1
+	if $number > 0
+		for $i in (1)..($number)
+			$value = $value * $i
+	return $value
+
+rad($angle)
+	$unitless = $angle / 180 * $pi
+	return $unitless
+// rad($angle)
+// 	$unit = unit($angle)
+// 	$unitless = $angle / ($angle * 0 + 1)
+// 	// If the angle has 'deg' as unit, convert to radians.
+// 	if $unit == deg
+// 		$unitless = $unitless / 180 * pi()
+// 	return $unitless
+sin($angle)
+	$sin = 0
+	$angle = rad($angle)
+	// Iterate a bunch of times.
+	for $i in 0..10
+		$sin = $sin + pow(-1, $i) * pow($angle, 2 * $i + 1) / fact(2 * $i + 1)
+	return $sin
+cos($angle)
+	$cos = 0
+	$angle = rad($angle)
+	// Iterate a bunch of times.
+	for $i in 0..10
+		$cos = $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i)
+	return $cos
+tan($angle)
+	return sin($angle) / cos($angle)
+
+// factorial(n)
+// 	if n == 1
+// 		return n
+// 	else
+// 		return n * factorial(n - 1)
+
+// radians(n)
+// 	return n * $pi / 180
+
+// raise(n, x)
+// 	if x == 1
+// 		return n
+// 	else
+// 		return n * raise(n, x - 1)
+
+// taylor(n, x)
+// 	return raise(n, x) / factorial(x)
+
+// sin(n)
+// 	return (n - (((((((taylor(n, 3) + taylor(n, 5)) - taylor(n, 7)) + taylor(n, 9)) - taylor(n, 11)) + taylor(n, 13)) - taylor(n, 15)) + taylor(n, 17)))
+
+// cos(n)
+// 	return (n - (((((((taylor(n, 2) + taylor(n, 4)) - taylor(n, 6)) + taylor(n, 8)) - taylor(n, 10)) + taylor(n, 12)) - taylor(n, 14)) + taylor(n, 16)))
+
+// tan(n)
+// 	return sin(n) / cos(n)
+
+
+// $pi = 3.14159265359
+// $_precision = 10
+// pow($base, $exp)
+//  $value = $base
+//  if $exp > 1
+//      for $i in (2)..($exp)
+//          $value = $value * $base
+//  if $exp < 1
+//      for $i in (0)..(-$exp)
+//          $value = $value / $base
+//  return $value
+// fact($num)
+//  $fact = 1
+//  if $num > 0
+//      for $i in (1)..($num)
+//          $fact = $fact * $i
+//  return $fact
+// to_unitless_rad($angle)
+//  if unit($angle) == "deg"
+//      $angle = $angle / 180deg * $pi
+//  if unit($angle) == "rad"
+//      $angle = $angle / 1rad
+//  return $angle
+// sin($angle)
+//  //Function unitless is not supported in Stylus
+//  $a = to_unitless_rad($angle)
+//  $sin = $a
+//  for $n in (1)..($_precision)
+//      $sin = $sin + pow(-1, $n) / fact(2 * $n + 1) * pow($a, 2 * $n + 1)
+//  return $sin
+// cos($angle)
+//  //Function unitless is not supported in Stylus
+//  //$a = to_unitless_rad($angle)
+//  $cos = 1
+//  for $n in (1)..($_precision)
+//      $cos = $cos + pow(-1, $n) / fact(2 * $n) * pow($a, 2 * $n)
+//  return $cos
+// tan($angle)
+//  return sin($angle) / cos($angle)
